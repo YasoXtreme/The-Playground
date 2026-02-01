@@ -15,7 +15,7 @@ Since this is a **"monorepo"** (many projects in one place), you don't install e
 ### 1. Clone the repo
 
 ```bash
-git clone [https://github.com/YasoXtreme/the-playground.git](https://github.com/YasoXtreme/the-playground.git)
+git clone https://github.com/YasoXtreme/The-Playground.git
 cd the-playground
 ```
 

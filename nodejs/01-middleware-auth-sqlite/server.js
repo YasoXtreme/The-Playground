@@ -24,7 +24,7 @@ app.get("/create-player", (req, res) => {
   });
 });
 
-app.get("/game", authenticatePlayer, (req, res) => {
+app.get("/game", authenticatePlayer, async (req, res) => {
   const score = req.query.score;
   const player = req.player;
 
@@ -32,7 +32,14 @@ app.get("/game", authenticatePlayer, (req, res) => {
   if (isNaN(score)) return res.status(400).json({ error: "Invalid score" });
 
   console.log(`Player ${player} scored ${score}`);
-  if (score > player.score) updatePlayerScore(player, score);
+  if (score > player.score) {
+    try {
+      await updatePlayerScore(player, score);
+    } catch (err) {
+      console.error(err.message);
+      return res.status(500).json({ error: err.message });
+    }
+  }
 
   res
     .status(200)
@@ -69,10 +76,17 @@ function authenticatePlayer(req, res, next) {
 }
 
 function updatePlayerScore(player, score) {
-  player.score = score;
-  const sql = "UPDATE highscores SET score = ? WHERE playerid = ?";
-  db.run(sql, [player.score, player.playerid], (err) => {
-    if (err) console.error(err.message);
-    console.log(`Player ${player.name} updated score to ${player.score}`);
+  return new Promise((resolve, reject) => {
+    player.score = score;
+    const sql = "UPDATE highscores SET score = ? WHERE playerid = ?";
+    db.run(sql, [player.score, player.playerid], (err) => {
+      if (err) {
+        console.error(err.message);
+        reject(err);
+      } else {
+        resolve();
+        console.log(`Player ${player.name} updated score to ${player.score}`);
+      }
+    });
   });
 }
