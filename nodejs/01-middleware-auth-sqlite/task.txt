@@ -1,0 +1,7 @@
+Challenge 1: Write a script that creates a generic database (e.g., storing "High Scores" for a game).
+
+Challenge 2: Create an Express server with a "Game" route. Write a middleware that requires a `player-id`.
+If the header exists, let them save their score. If not, block them.
+
+Integration: Make the middleware look up the player-id in your SQLite database
+If the ID exists in the DB, attach the player's name to req and welcome them by name in the final route.
