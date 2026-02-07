@@ -39,4 +39,8 @@ I don't commit `node_modules` (to keep things clean), you need to install the de
 
 - **middleware-auth-sqlite**: A from-scratch implementation of a User Authentication System using standard Express Middleware and a local SQLite database.
 
+### Tensorflow
+
+- **cifar10:** The training and testing proccesses of a model that can identify objects in images using the cifar10 database.
+
 _(More coming soon...)_
