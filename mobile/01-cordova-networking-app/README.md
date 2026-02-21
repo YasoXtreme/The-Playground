@@ -4,7 +4,7 @@ A portable, full-stack local network scanner designed to map out active IP addre
 
 [![Network Scanner v1.0](https://img.shields.io/github/v/release/yasoxtreme/The-Playground?filter=networkscanner-v1.0&style=for-the-badge&color=FF416C)](https://github.com/YOURUSERNAME/YOURREPO/releases/tag/networkscanner-v1.0)
 
-> 📥 **Quick Download:** Don't want to compile the code from scratch? You can download the install-ready `.apk` file directly from the [Releases page](https://github.com/yasoxtreme/The-Playground/releases/) to test it on your Android device immediately.
+> 📥 **Quick Download:** Don't want to compile the code from scratch? You can download the install-ready `.apk` file directly from the [Releases page](https://github.com/yasoxtreme/The-Playground/releases/tag/networkscanner-v1.0) to test it on your Android device immediately.
 
 ### 📦 Project Dependencies
 
