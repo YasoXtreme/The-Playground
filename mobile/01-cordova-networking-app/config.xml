@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.yasoxtreme.networkscanner" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Network Scanner</name>
+    <description>
+        My first cordova/nodejs-mobile application that scans the network for devices and displays their IP addresses.
+    </description>
+    <author email="yaso20082008@gmail.com" href="">
+        YasoXtreme
+    </author>
+    <preference name="SplashScreenDelay" value="0" />
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
+    <platform name="android">
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/icon.png" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#F4F7F6" />
+        <icon src="res/icon.png" />
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+    </platform>
+    
+</widget>
